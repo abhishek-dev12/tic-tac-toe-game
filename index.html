@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/868c9e8e66.js" crossorigin="anonymous"></script>
+      <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@1,700&family=Lora:ital,wght@1,700&display=swap" rel="stylesheet"> 
+      <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@1,700&family=Lora:ital,wght@1,700&family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet"> 
+    <title>Document</title>
+  </head>
+  <body class="body-class" id="blur">
+
+    <div class="wrapper" id="container-blur">
+      <!--header section -->
+
+      <div class="header">
+        <h2 class="top-heading" id="headername">
+          Tic Tac Toe
+        </h2>
+      </div>
+
+      <div class="player-section">
+        <div class="player-first player-divs" id="active-player-1"><span class="player-one active" id="player-one-value"></span></div>
+         <div><span class="span-text">vs</span></div>
+        <div class="player-second player-divs" id="active-player-2"><span class="player-two active" id="player-two-value"></span>
+          </div>
+    </div>
+
+
+      <!--player-section-->
+
+      <div class="container">
+       
+      
+      <!--pop window -->
+
+      
+
+      <!-- winner box  -->
+
+     
+          <!--tic tac toe game boxes-->
+
+          <div class="tic-tac-toe" id="tic-tac-toe">
+            <div class="box" data-cell></div>
+            <div class="box" data-cell></div>
+            <div class="box" data-cell></div>
+            <div class="box" data-cell></div>
+            <div class="box" data-cell></div>
+            <div class="box" data-cell></div>
+            <div class="box" data-cell></div>
+            <div class="box" data-cell></div>
+            <div class="box" data-cell></div>
+          </div>   
+       
+          <!--reset button-->
+      
+         <button class="reset-button btn" id="reset-btn">
+          Reset game
+         </button>
+
+        </div>
+</div>
+
+    
+  
+<div class="model hide" id="model-id" >
+  
+  <div class="popup-container">
+    <div class="heading text">Welcome</div>
+       <div class="first-player column-div">
+         <label class="text">First player</label>
+         <input type="text" class="inputOne input" id="input-box-one" placeholder="Enter player name" maxlength="10"  value="" required>
+         <label class="first-name-error error" id="name-error-first"><i class="fa-solid fa-circle-exclamation"></i> Enter first player</label>
+       </div>
+       <div class="second-player column-div">
+         <label class="text">second player</label>
+         <input type="text" class="inputTwo input" id="input-box-two" placeholder="Enter player name"  maxlength="10"  value="" required>
+         <label class="second-name-error error" id="name-error-second"><i class="fa-solid fa-circle-exclamation"></i> Enter second player</label>
+       </div>
+     <button class="enter-button btn" id="enter-btn">Enter</button>
+ </div>
+</div>
+        
+<div class="win-pop" id="win-popup">
+  <div class="win-pop-container">
+     <div class="cheerup-div">🏆</div>
+     <div class="player-div text" id="player-div-id">abhishek win</div>
+     <button class="play-again-btn btn" id="play-again">Play again</button>
+     
+  </div>
+ </div>
+
+  
+     <script defer src="script.js"></script>
+  </body>
+</html>
