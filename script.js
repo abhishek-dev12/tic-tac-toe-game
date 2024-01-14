@@ -39,7 +39,10 @@ function Model(){
         bodyBlur.classList.add('active')
         inputOne.value = ''
         inputTwo.value = ''
+
      }, 500)
+
+    
 }
 
 // closing Model box
@@ -47,42 +50,44 @@ document.getElementById('enter-btn').addEventListener('click', () => {
        playerOne.innerText = `${inputOne.value} - X`
        playerTwo.innerText = ` ${inputTwo.value} - O`
      
-       if(inputOne.value && !inputTwo.value){
-             errorSecond.style.display = 'block'
-             
-       } else if(!inputOne.value && inputTwo.value){
-            
-        errorFirst.style.display = 'block'
-       
- } else if(!inputOne.value || !inputTwo.value){
+     if(!inputOne.value && !inputTwo.value){
         errorFirst.style.display = 'block'
         errorSecond.style.display = 'block'
-       }else {
+    }else {
         ModelBox.style.display = 'none'
         bodyBlur.classList.remove('active')
-       }
+    }
+
+    startGame()
 })
 
-// reset btn
-resetBtn.addEventListener('click', startGame)
+resetBtn.addEventListener('click', () => {
+    activePlayerSecond.classList.remove('activePlayer')
+    activePlayerFirst.classList.add('activePlayer')
+    turn = undefined 
+    startGame()
+})
 
 // play again btn on win message box
 play.addEventListener('click', () => {
     winBox.style.display = 'none'
     bodyBlur.classList.remove('active')
+    activePlayerSecond.classList.remove('activePlayer')
+    activePlayerFirst.classList.add('activePlayer')
+    turn = undefined 
     startGame()
 })
 
-startGame()
 
 function startGame(){
-   playboard.forEach(box => {
-    box.innerText = ''
-   });
-playboard.forEach(boxes => {
-    boxes.addEventListener('click', handlefunction, {once : true})
-});
+    playboard.forEach(box => {
+        box.innerText = ''
+    });
+        playboard.forEach(boxes => {
+        boxes.addEventListener('click', handlefunction, {once : true})
+    });
 }
+
 
 
 // function for controling game click
@@ -94,10 +99,14 @@ function handlefunction(e) {
 
    if(win(currentTurn)){
     winnerMessage(currentTurn)
+
 } else if(drawFunction()){
     winMessageBox.innerText = `Oops it's draw`
     winBox.style.display = 'block'
     bodyBlur.classList.add('active')
+    activePlayerSecond.classList.remove('activePlayer')
+    activePlayerFirst.classList.add('activePlayer')
+    turn = undefined 
 }
 
     turn = !turn
@@ -110,7 +119,10 @@ function handlefunction(e) {
         activePlayerSecond.classList.remove('activePlayer')
     }
 
+    // reset btn
+
     
+
 }
 
 
@@ -136,9 +148,9 @@ function drawFunction(){
 
 function winnerMessage(currentTurn){
     if(currentTurn == xTurn){
-    winMessageBox.innerText = `${playerOne.innerHTML} won`
+    winMessageBox.innerText = `${playerOne.innerText} won`
 }else{
-    winMessageBox.innerText = `${playerTwo.innerHTML} won`
+    winMessageBox.innerText = `${playerTwo.innerText} won`
 }
    winBox.style.display = 'block'
    bodyBlur.classList.add('active')

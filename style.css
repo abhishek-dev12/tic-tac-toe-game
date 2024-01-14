@@ -156,18 +156,21 @@ html{
 .model .popup-container{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    gap:1rem;
+    justify-content: space-between;
+    gap:1.5rem;
+   
 }
 
 .heading{
     text-align: center;
     font-size: 1.5rem !important;
+    
 }
 
 .column-div{
     display: flex;
     flex-direction: column;
+    
 }
 
 
@@ -181,7 +184,7 @@ html{
 
 .input{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: .9rem;
+    font-size: .7rem;
     color:#8f8f9d;
     padding:.5rem;
     background:none;
